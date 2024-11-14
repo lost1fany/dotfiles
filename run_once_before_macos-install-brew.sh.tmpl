@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+if [ ! -d "/opt/homebrew" ]; then
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL $URL )" >/dev/null
+fi
+{{ end -}}

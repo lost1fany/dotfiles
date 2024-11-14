@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "darwin" -}}
+
+#!/bin/bash
+
+if ! command -v yc &>/dev/null; then
+    curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash >/dev/null
+fi
+
+{{ end -}}
+

@@ -1,0 +1,25 @@
+{{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) }}
+
+#!/bin/bash
+
+sudo pacman -Sy --noconfirm > /dev/null
+
+{
+{{ range .packages.all.core -}}
+echo {{ . | quote }}
+{{ end -}}
+
+{{ if .chezmoi.data.extra -}}
+{{ range .packages.all.extra -}}
+echo {{ . | quote }}
+{{ end -}}
+{{ end -}}
+
+{{ range .packages.arch.core -}}
+echo {{ . | quote }}
+{{ end -}}
+} | xargs sudo pacman -S --needed --noconfirm
+
+{{ end -}}
+
+

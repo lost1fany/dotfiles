@@ -1,0 +1,82 @@
+packages:
+  # list of packages to install with same name in different package managers
+  all:
+    core:
+    - 'zsh'
+    - 'neovim'
+    - 'tmux'
+    - 'git'
+    - 'lazygit'
+    - 'curl'
+    - 'wget'
+    - 'tree'
+    - 'fzf' # Fuzzy finder with multiple select
+    - 'ripgrep' # Better grep
+    - 'jq'
+    - 'fd'  # Better find
+    - 'bat' # Better cat
+    - 'eza' # Better ls
+    - 'zoxide' # Better cd
+    - 'htop'
+    - 'p7zip'
+    - 'age' # Encryption
+    - 'luarocks' # Lua package manager for neovim
+    - 'tldr'
+    extra: 
+    - 'httpie' # Better http client
+    - 'yazi' # File manager
+    - 'ffmpegthumbnailer' # Thumbnails for yazi
+    - 'poppler' # PDF viewer
+    - 'imagemagick' # Image viewer
+    - 'python'
+    - 'go'
+    - 'node'
+    - 'nmap'
+    - 'masscan'
+    - 'netcat'
+    - 'sqlmap'
+  # list specific to a brew
+  darwin:
+    brew:
+    - 'lazydocker'
+    - 'gnu-typist'
+    - 'awscli'
+    - 'dnsx'
+    - 'ffuf'
+    - 'nuclei'
+    - 'naabu'
+    - 'haiti'
+    - 'delve' # Debugger for golang
+    cask:
+    - 'telegram'
+    - 'whatsapp'
+    - 'obs'
+    - 'iina' # Video player
+    - 'spotify'
+    - 'plex-media-server'
+    - 'microsoft-word'
+    - 'microsoft-excel'
+    - 'microsoft-powerpoint'
+    - 'discord'
+    - 'zoom'
+    - 'font-jetbrains-mono-nerd-font'
+    - 'firefox'
+    - 'transmission'
+    - 'wezterm'
+    - 'tunnelblick'
+    - 'deepl'
+    - 'chatgpt'
+    - 'sublime-text'
+    - 'michaelvillar-timer'
+    - 'keka'
+    - 'flameshot'
+    - 'docker'
+    - 'dropbox'
+    - 'todoist'
+    - 'nikitabobko/tap/aerospace'
+  # list specific to a pacman
+  arch:
+    core:
+    - 'docker'
+    - 'docker-compose'
+
