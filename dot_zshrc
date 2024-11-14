@@ -1,5 +1,9 @@
 # Author: Lost.Fany
 # Test
+
+# Vi mode
+set -o vi
+
 # Environment
 export ZSH="$HOME/.oh-my-zsh"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
