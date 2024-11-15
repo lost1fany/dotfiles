@@ -9,7 +9,7 @@ encryption = "age"
     exclude = ["scripts"]
 
 {{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) }}
-{{ $extra := promptBool . "Extra" "Do you want to enable extra packages?" }}
+{{ $extra := promptBool "Do you want to enable extra packages?" }}
 [data]
     extra = {{ $extra }}
 {{ end }}
