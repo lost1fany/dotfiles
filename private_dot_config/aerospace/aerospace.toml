@@ -213,6 +213,10 @@ if.app-id = 'com.linguee.DeepLCopyTranslator'
 run = "layout floating"
 
 [[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = "layout floating"
+
+[[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = "move-node-to-workspace C"
 
