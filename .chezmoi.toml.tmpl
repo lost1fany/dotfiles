@@ -7,10 +7,15 @@ encryption = "age"
     autoPush = true
 [diff]
     exclude = ["scripts"]
-
+[data]
+    blank = ""
+{{- if eq .chezmoi.os "darwin" }}
+{{- $aws_access_key_id := promptString "aws_access_key_id" }}
+{{- $aws_secret_access_key := promptString "aws_secret_access_key" }}
+    aws_access_key_id = "{{ $aws_access_key_id }}"
+    aws_secret_access_key = "{{ $aws_secret_access_key }}"
+{{ end }}
 {{ if (and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch")) }}
 {{ $extra := promptBool "Do you want to enable extra packages?" }}
-[data]
     extra = {{ $extra }}
 {{ end }}
-
