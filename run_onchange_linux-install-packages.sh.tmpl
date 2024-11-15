@@ -9,7 +9,7 @@ sudo pacman -Sy --noconfirm > /dev/null
 echo {{ . | quote }}
 {{ end -}}
 
-{{ if .chezmoi.data.extra -}}
+{{ if .extra -}}
 {{ range .packages.all.extra -}}
 echo {{ . | quote }}
 {{ end -}}
