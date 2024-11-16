@@ -9,8 +9,8 @@ vim.keymap.set("i", "<Tab>", function()
 	return vim.fn["codeium#Accept"]()
 end, { expr = true, silent = true })
 vim.keymap.set("i", "<C-l>", function()
-    return vim.fn["codeium#AcceptLine"]()
-end, { expr = true, silent = true }
+	return vim.fn["codeium#AcceptLine"]()
+end, { expr = true, silent = true })
 vim.keymap.set("i", "<M-]>", function()
 	return vim.fn["codeium#CycleCompletions"](1)
 end, { expr = true, silent = true })
@@ -20,7 +20,6 @@ end, { expr = true, silent = true })
 vim.keymap.set("i", "<C-x>", function()
 	return vim.fn["codeium#Clear"]()
 end, { expr = true, silent = true })
-
 
 -- UndoTree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { silent = true })
