@@ -30,7 +30,6 @@ packages:
     - 'imagemagick' # Image viewer
     - 'python'
     - 'go'
-    - 'node'
     - 'nmap'
     - 'masscan'
     - 'netcat'
@@ -43,6 +42,7 @@ packages:
     - 'awscli'
     - 'dnsx'
     - 'ffuf'
+    - 'node'
     - 'nuclei'
     - 'naabu'
     - 'haiti'
@@ -79,4 +79,5 @@ packages:
     core:
     - 'docker'
     - 'docker-compose'
-
+    extra:
+    - 'nodejs'
