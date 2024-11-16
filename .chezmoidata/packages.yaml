@@ -81,3 +81,4 @@ packages:
     - 'docker-compose'
     extra:
     - 'nodejs'
+    - 'npm'
