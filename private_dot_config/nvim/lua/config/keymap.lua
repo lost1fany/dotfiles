@@ -2,23 +2,31 @@
 vim.g.mapleader = " "
 
 -- Escape
-vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
+vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 
 -- Codeium
-vim.keymap.set('i', '<Tab>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-vim.keymap.set('i', '<M-]>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<M-[>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
-vim.keymap.set('i', '<M-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+vim.keymap.set("i", "<Tab>", function()
+	return vim.fn["codeium#Accept"]()
+end, { expr = true, silent = true })
+vim.keymap.set("i", "<M-]>", function()
+	return vim.fn["codeium#CycleCompletions"](1)
+end, { expr = true, silent = true })
+vim.keymap.set("i", "<M-[>", function()
+	return vim.fn["codeium#CycleCompletions"](-1)
+end, { expr = true, silent = true })
+vim.keymap.set("i", "<C-x>", function()
+	return vim.fn["codeium#Clear"]()
+end, { expr = true, silent = true })
 
 -- UndoTree
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { silent = true })
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { silent = true })
 
 -- NeoTree
-vim.keymap.set('n', '<leader>e', ':Neotree float reveal<CR>', { silent = true })
+vim.keymap.set("n", "<leader>e", ":Neotree float reveal<CR>", { silent = true })
 -- vim.keymap.set('n', '<leader>E', ':Neotree left reveal<CR>', { silent = true})
 
 -- Yazi
-vim.keymap.set('n', '<leader>E', '<cmd>Yazi<cr>', { silent = true }) -- open yazi at the current file
+vim.keymap.set("n", "<leader>E", "<cmd>Yazi<cr>", { silent = true }) -- open yazi at the current file
 -- vim.keymap.set('n', '<leader>E', '<cmd>Yazi cwd<cr>', { silent = true})                -- open yazi at the current working directory
 -- vim.keymap.set('n', '<leader>-', '<cmd>Yazi toggle<cr>', { silent = true})             -- resume the last yazi session
 
@@ -29,31 +37,31 @@ vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
 vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
 
 -- Comments
-vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>', { silent = true })
+vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", { silent = true })
 
 -- Splits
-vim.keymap.set('n', 's|', ':vsplit<CR>', { silent = true })
-vim.keymap.set('n', 's\\', ':split<CR>', { silent = true })
+vim.keymap.set("n", "s|", ":vsplit<CR>", { silent = true })
+vim.keymap.set("n", "s\\", ":split<CR>", { silent = true })
 
 -- Other
-vim.keymap.set('n', '<leader>w', ':w<CR>', { silent = true })
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', { silent = true })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { silent = true })
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
 
 -- Tabs
-vim.keymap.set('n', '<leader>x', ':BufferLinePickClose<CR>', { silent = true })
-vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
-vim.keymap.set('n', '<s-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set("n", "<leader>x", ":BufferLinePickClose<CR>", { silent = true })
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true })
+vim.keymap.set("n", "<s-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
 
 -- Terminal
-vim.keymap.set('n', '<leader>tf', ':ToggleTerm direction=float<CR>', { silent = true })
-vim.keymap.set('n', '<leader>th', ':ToggleTerm direction=horizontal<CR>', { silent = true })
-vim.keymap.set('n', '<leader>tv', ':ToggleTerm direction=vertical size=40<CR>', { silent = true })
-vim.keymap.set('n', '<leader>tr', ':ToggleTermSendCurrentLine <T_ID><CR>', { silent = true })
-vim.keymap.set('v', '<leader>tr', ':ToggleTermSendVisualSelection <T_ID><CR>', { silent = true })
+vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<CR>", { silent = true })
+vim.keymap.set("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>", { silent = true })
+vim.keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical size=40<CR>", { silent = true })
+vim.keymap.set("n", "<leader>tr", ":ToggleTermSendCurrentLine <T_ID><CR>", { silent = true })
+vim.keymap.set("v", "<leader>tr", ":ToggleTermSendVisualSelection <T_ID><CR>", { silent = true })
 -- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts) -- Escape terminal mode (comment for work vim navigation in terminal mode in yazi)
-vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
+vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
+vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
 
 -- LazyGit
 vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
@@ -63,18 +71,18 @@ vim.keymap.set("n", "<leader>H", "<cmd>lua _htop_toggle()<CR>", { noremap = true
 vim.keymap.set("n", "<leader>G", "<cmd>ChatGPT<CR>", { noremap = true, silent = true })
 
 -- Telescope
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, { noremap = true, silent = true })
-vim.keymap.set('n', '<Leader>ff', builtin.find_files, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>gb', builtin.git_branches, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>gc', builtin.git_commits, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>gs', builtin.git_status, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>ls', builtin.lsp_document_symbols, { noremap = true, silent = true })
-vim.keymap.set('n', 'gd', builtin.lsp_definitions, { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>ff", builtin.find_files, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fb", builtin.buffers, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gb", builtin.git_branches, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gc", builtin.git_commits, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>gs", builtin.git_status, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ls", builtin.lsp_document_symbols, { noremap = true, silent = true })
+vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
 
 -- Oil
 -- [<leader>-] open OIL
@@ -98,32 +106,34 @@ vim.keymap.set('n', 'gd', builtin.lsp_definitions, { noremap = true, silent = tr
 
 -- LSP
 -- Global mappings.
-vim.keymap.set('n', '<leader>lD', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>l[', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<leader>l]', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>ld', vim.diagnostic.setloclist)
+vim.keymap.set("n", "<leader>lD", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>l[", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>l]", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>ld", vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-    callback = function(ev)
-        -- Enable completion triggered by <c-x><c-o>
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+	callback = function(ev)
+		-- Enable completion triggered by <c-x><c-o>
+		vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-        local opts = { buffer = ev.buf }
-        vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, opts)
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-        vim.keymap.set('n', '<Leader>lr', vim.lsp.buf.rename, opts)
-        vim.keymap.set({ 'n', 'v' }, '<Leader>la', vim.lsp.buf.code_action, opts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-        vim.keymap.set('n', '<Leader>lf', function() vim.lsp.buf.format { async = true } end, opts)
-    end
+		local opts = { buffer = ev.buf }
+		vim.keymap.set("n", "gd", vim.lsp.buf.declaration, opts)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+		vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, opts)
+		vim.keymap.set({ "n", "v" }, "<Leader>la", vim.lsp.buf.code_action, opts)
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+		vim.keymap.set("n", "<Leader>lf", function()
+			vim.lsp.buf.format({ async = true })
+		end, opts)
+	end,
 })
 
-local wk = require("which-key")
+-- local wk = require("which-key")
 
 -- wk.add({
 --     -- Escape
