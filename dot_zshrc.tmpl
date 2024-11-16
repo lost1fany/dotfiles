@@ -7,6 +7,9 @@ set -o vi
 # Environment
 export ZSH="$HOME/.oh-my-zsh"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
+export EDITOR=nvim
+
+
 
 # Theme
 ZSH_THEME="lost1fany"
@@ -27,6 +30,7 @@ alias f="yazi"
 {{ if eq .chezmoi.os "darwin" -}}
 # AWS Aliases
 source ~/.config/zsh/aws_aliases.zsh
+export OPENAI_API_KEY={{ .openai_api_key }}
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
