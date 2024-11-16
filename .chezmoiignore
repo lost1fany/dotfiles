@@ -6,6 +6,7 @@ README.md
 .config/flameshot
 .config/yandex-cloud
 .config/wezterm
+.config/zsh/aws_aliases.zsh
 .ssh/config
 .ssh/id_rsa
 .ssh/id_rsa.pub 
