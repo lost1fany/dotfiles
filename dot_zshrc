@@ -21,11 +21,7 @@ alias cl="clear"
 alias ls="eza --tree --level=1 "
 alias ll="eza --tree --level=1 --long --time-style long-iso"
 alias rm="rm -rf"
-alias t="todo.sh"
 alias cd="z"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
 alias f="yazi"
 
 # AWS Aliases
