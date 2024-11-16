@@ -10,5 +10,7 @@
 .ssh/config
 .ssh/id_rsa
 .ssh/id_rsa.pub 
+{{ else }}
+.ssh/authorized_keys
 {{- end }}
 
