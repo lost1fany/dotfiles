@@ -71,7 +71,11 @@ bind \\ split-window -v
 bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
 
 # Status line
+{{ if eq .chezmoi.os "darwin" -}}
 set -g status-right '#[fg=yellow] #{keyboard_layout} | #[fg=green]#(whoami)@#H #[fg=yellow] | M #{ram_percentage} | C #{cpu_percentage} | B #{battery_percentage} | %a %h-%d %H:%M '
+{{ else -}}
+set -g status-right '#[fg=green]#(whoami)@#H #[fg=yellow] | M #{ram_percentage} | C #{cpu_percentage} | %a %h-%d %H:%M '
+{{ end -}}
 set-option -g status-right-length 100
 
 set-option -g status-left "#[fg=green]#S #[fg=yellow]> " 
@@ -86,10 +90,13 @@ set-option -g window-status-current-format "#[fg=green]#I-#W"
 # Plugins 
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-battery'
 set -g @plugin 'tmux-plugins/tmux-cpu'
 
+{{ if eq .chezmoi.os "darwin" -}}
+set -g @plugin 'tmux-plugins/tmux-battery'
 set -g @plugin 'imomaliev/tmux-keyboard-layout'
+{{ end -}}
+
 set -g @keyboard_layout:length 3
 set -g @keyboard_layout:option_scope '-'
 
