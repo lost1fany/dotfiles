@@ -8,6 +8,10 @@ encryption = "age"
 [diff]
     exclude = ["scripts"]
 [data]
+{{- $git_email := promptString "git_email" }}
+{{- $git_name := promptString "git_name" }}
+    git_email = "{{ $git_email }}"
+    git_name = "{{ $git_name }}"
 {{- $telegram_chat_id := promptString "telegram_chat_id" }}
 {{- $telegram_api_key := promptString "telegram_api_key" }}
     telegram_chat_id = "{{ $telegram_chat_id }}"
