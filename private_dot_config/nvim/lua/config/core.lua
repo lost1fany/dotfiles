@@ -40,3 +40,9 @@ vim.opt.fillchars = {
 }
 vim.cmd([[highlight clear LineNr]])
 vim.cmd([[highlight clear SignColumn]])
+
+vim.treesitter.language.register("bash", "sh.tmpl")
+vim.treesitter.language.register("lua", "lua.tmpl")
+vim.treesitter.language.register("yaml", "yaml.tmpl")
+vim.treesitter.language.register("json", "json.tmpl")
+vim.treesitter.language.register("config", "conf.tmpl")
