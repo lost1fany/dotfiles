@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 
 -- Move
-vim.keymap.set("n", "l", function()
+vim.keymap.set({ "n", "v" }, "l", function()
 	local col = vim.fn.virtcol(".")
 	local end_col = vim.fn.virtcol("$") - 1
 	if col >= end_col then
@@ -15,11 +15,29 @@ vim.keymap.set("n", "l", function()
 	end
 end, { noremap = true, silent = true })
 
-vim.keymap.set("n", "h", function()
+vim.keymap.set({ "n", "v" }, "h", function()
 	if vim.fn.col(".") == 1 then
 		vim.cmd("normal! k$")
 	else
 		vim.cmd("normal! h")
+	end
+end, { noremap = true, silent = true })
+
+vim.keymap.set("i", "<Right>", function()
+	local col = vim.fn.virtcol(".")
+	local end_col = vim.fn.virtcol("$") - 1
+	if col >= end_col then
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>ji", true, false, true), "n", false)
+	else
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, false, true), "n", false)
+	end
+end, { noremap = true, silent = true })
+
+vim.keymap.set("i", "<Left>", function()
+	if vim.fn.col(".") == 1 then
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>k$i", true, false, true), "n", false)
+	else
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left>", true, false, true), "n", false)
 	end
 end, { noremap = true, silent = true })
 
