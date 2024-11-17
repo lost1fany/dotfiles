@@ -27,7 +27,7 @@ vim.keymap.set("i", "<Right>", function()
 	local col = vim.fn.virtcol(".")
 	local end_col = vim.fn.virtcol("$") - 1
 	if col >= end_col then
-		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>ji", true, false, true), "n", false)
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>j0i", true, false, true), "n", false)
 	else
 		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, false, true), "n", false)
 	end
