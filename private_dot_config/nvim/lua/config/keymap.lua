@@ -4,6 +4,23 @@ vim.g.mapleader = " "
 -- Escape
 vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 
+-- Move
+vim.keymap.set("n", "l", function()
+	if vim.fn.col(".") >= vim.fn.col("$") then
+		vim.cmd("normal! j0")
+	else
+		vim.cmd("normal! l")
+	end
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "h", function()
+	if vim.fn.col(".") == 1 then
+		vim.cmd("normal! k$")
+	else
+		vim.cmd("normal! h")
+	end
+end, { noremap = true, silent = true })
+
 -- Codeium
 vim.keymap.set("i", "<Tab>", function()
 	return vim.fn["codeium#Accept"]()
