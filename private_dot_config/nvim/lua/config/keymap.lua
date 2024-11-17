@@ -6,7 +6,9 @@ vim.keymap.set("i", "jj", "<Esc>", { silent = true })
 
 -- Move
 vim.keymap.set("n", "l", function()
-	if vim.fn.col(".") >= vim.fn.col("$") then
+	local col = vim.fn.virtcol(".")
+	local end_col = vim.fn.virtcol("$") - 1
+	if col >= end_col then
 		vim.cmd("normal! j0")
 	else
 		vim.cmd("normal! l")
