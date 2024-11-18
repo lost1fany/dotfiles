@@ -3,6 +3,7 @@ packages:
   all:
     core:
     - 'zsh'
+    - 'lsof'
     - 'neovim'
     - 'tmux'
     - 'git'
