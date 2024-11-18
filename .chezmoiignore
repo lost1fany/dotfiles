@@ -7,6 +7,7 @@
 .config/yandex-cloud
 .config/wezterm
 .config/zsh/aws_aliases.zsh
+.config/nvim/lua/plugins/copilot.lua
 .ssh/config
 .ssh/id_rsa
 .ssh/id_rsa.pub 
