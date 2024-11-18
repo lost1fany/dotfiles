@@ -7,10 +7,10 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Clear not used packages
-pacman -Rns $(pacman -Qdtq)
+pacman -Rns $(pacman -Qdtq) --noconfirm
 
 # Clear cache
-pacman -Scc
+pacman -Scc --noconfirm
 
 journalctl --vacuum-time=1m
 journalctl --vacuum-size=1M
