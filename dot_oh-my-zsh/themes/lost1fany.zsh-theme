@@ -2,6 +2,8 @@
 # Author: lost.fany
 # URL: http://lostfany.net
 
+# PS1="%{$fg[blue]%}%~\$(git_prompt_info)\$(hg_prompt_info) %(?.%{$fg[green]%}.%{$fg[red]%})%(!.#.»)%{$reset_color%} "
+
 PS1="%{$fg[blue]%}%~\$(git_prompt_info)\$(hg_prompt_info) %(?.%{$fg[green]%}.%{$fg[red]%})%(!.#.»)%{$reset_color%} "
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[cyan]%}(%{$fg[cyan]%}"
