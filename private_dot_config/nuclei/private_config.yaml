@@ -38,7 +38,7 @@
 #automatic-scan: false
 
 # list of template or template directory to run (comma-separated, file)
-templates: $HOME/.nuclei-templates
+templates: ~/.nuclei-templates
 
 # template url or list containing template urls to run (comma-separated, file)
 #template-url: []
