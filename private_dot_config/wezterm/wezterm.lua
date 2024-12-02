@@ -20,6 +20,11 @@ config = {
 	macos_window_background_blur = 10,
 	color_scheme = "Catppuccin Macchiato",
 	window_decorations = "RESIZE",
+	window_close_confirmation = "NeverPrompt",
+	window_frame = {
+		active_titlebar_bg = "#1f1f1f",
+		inactive_titlebar_bg = "#1f1f1f",
+	},
 }
 
 return config
